@@ -1,12 +1,11 @@
-import './App.css'
-import Header from "./components/molecules/Header.js";
+import './App.css';
 import React from 'react';
-
+import Home from "./components/pages/Home.js";
 
 function App() {
     return (
         <div>
-            <Header/>
+            <Home/>
         </div>
     )
 } export default App;
