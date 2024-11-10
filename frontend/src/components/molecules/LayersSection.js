@@ -4,12 +4,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useGSAP } from '@gsap/react';
 import React from 'react';
+import BigTitle from "./BigTitle.js";
+import HorizontalScroll from "./horizontalMayers.js";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function Layers() {
+
+    //Layers
+
     const main = useRef();
     const scrollTween = useRef();
+    let isScrolling = false;
+
     const { contextSafe } = useGSAP(
         () => {
             const panels = gsap.utils.toArray('.panel');
@@ -18,8 +25,11 @@ export default function Layers() {
                     trigger: panel,
                     start: 'top bottom',
                     end: '+=200%',
-                    onToggle: (self) =>
-                        self.isActive && !scrollTween.current && goToSection(i),
+                    onToggle: (self) => {
+                        if (self.isActive && !isScrolling) {
+                            goToSection(i);
+                        }
+                    },
                     id: 'panel-' + i,
                     markers: false,
                 });
@@ -34,30 +44,29 @@ export default function Layers() {
     );
 
     const goToSection = contextSafe((i) => {
+        if (scrollTween.current) return; // Empêche d'appeler plusieurs fois
+        isScrolling = true; // Début du scroll
         scrollTween.current = gsap.to(window, {
-            scrollTo: { y: i * window.innerHeight, autoKill: false },
+            scrollTo: { y: i * window.innerHeight, autoKill: true },
             duration: 1,
             id: 'scrollTween',
-            onComplete: () => (scrollTween.current = null),
-            overwrite: true,
+            onComplete: () => {
+                scrollTween.current = null;
+                isScrolling = false; // Fin du scroll
+            },
+            overwrite: 'auto', // true ?
         });
     });
 
     return (
         <main ref={main}>
             <section className="description panel light">
-                <div>
-                    <h1>Layered pinning</h1>
-                    <p>Use pinning to layer panels on top of each other as you scroll.</p>
-                    <div className="scroll-down">
-                        Scroll down<div className="arrow"></div>
-                    </div>
-                </div>
+                <BigTitle/>
             </section>
-            <section className="panel dark">ONE</section>
-            <section className="panel orange">TWO</section>
-            <section className="panel purple">THREE</section>
-            <section className="panel green">FOUR</section>
+            <section className="panel one title">Des technos...</section>
+            <section className="panel two title">... Des projets</section>
+            <section className="panel three title">.. des </section>
+            <section className="panel four title">... Des</section>
         </main>
     );
 }

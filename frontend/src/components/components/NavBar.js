@@ -297,6 +297,7 @@ export default function NavigationMenu() {
             sx={{ minHeight: 190,
                 position: 'fixed',
                 top: 0,
+                z: 200,
                 width: '100%',
                 textAlign: 'center',
                 margin: '0 10 0',
