@@ -1,26 +1,17 @@
-/*body {*/
-/*    font-family: Mori;*/
-/*    font-weight: 300;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    background:#0e100f;*/
-/*}*/
-
 .main-tool-bar {
-    /*height: 80px;*/
-    /*background: #fffce1;*/
-    /*color:#0e100f;*/
-    /*text-align: center;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
-
     position: fixed;
-    width: 100%;
-    left: 0;
+    width: 100vw; /* Ensures full width */
     top: 0;
-    transition: ease 0.4s;
-    &--scrolled {
-        height: 40px;
-    }
+    left: 0;
+    background-color: #ededed;
+    transition: height 0.4s ease;
+    z-index: 100; /* Assurez-vous qu'il est au-dessus des autres contenus */
+    height: 60px; /* Définissez une hauteur fixe */
+    display: flex; /* Utilisez Flexbox pour aligner le contenu */
+    align-items: center; /* Centre verticalement le contenu */
+    padding: 0 20px; /* Ajoutez du padding pour un peu d'espace */
+}
+
+.main-tool-bar--scrolled {
+    height: 100px; /* Adjusted height when scrolled */
 }

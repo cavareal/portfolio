@@ -1,0 +1,37 @@
+#main-scrollbar {
+    overflow: hidden;
+}
+
+.blank {
+    height: 100vh;
+    text-align: center;
+}
+
+.horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.pin-wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.animation-wrap {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.item {
+    flex-shrink: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    padding: 20px;
+    box-sizing: border-box;
+}
