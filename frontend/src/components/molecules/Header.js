@@ -1,37 +1,27 @@
-import '@fontsource/inter';
-import NavigationMenu from "../components/NavBar.js";
-import React, { useEffect } from 'react';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from 'gsap';
-import './Header.css';
+import React, { useRef } from 'react';
+import { gsap } from 'gsap';
+import { Observer } from 'gsap/Observer';
+import {useGSAP} from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Observer);
 
 function Header() {
-    useEffect(() => {
-        const showAnim = gsap.from('.main-tool-bar', {
-            yPercent: -100,
-            paused: true,
-            duration: 0.2
-        }).progress(1);
+    const headerRef = useRef(null);
 
-        ScrollTrigger.create({
-            start: "top top",
-            end: "max",
-            onUpdate: (self) => {
-                self.direction === -1 ? showAnim.play() : showAnim.reverse();
-            }
+    useGSAP(() => {
+        Observer.create({
+            target: window,
+            type: 'wheel,touch,scroll',
+            onUp: () => gsap.to(headerRef.current, { y: 0, duration: 0.3 }), // Réapparait quand on scroll vers le haut
+            onDown: () => gsap.to(headerRef.current, { y: -100, duration: 0.3 }), // Disparaît quand on scroll vers le bas
         });
     }, []);
 
-
     return (
-        // <header className="main-tool-bar">
-        //     <NavigationMenu />
-        // </header>
-        <div className="main-tool-bar">
+        // <header ref={headerRef} style={{ position: 'fixed', top: 0, left: 0, right: 0, z: 20, backgroundColor: '#333', color: '#fff', padding: '1rem' }}>
+        <header ref={headerRef} className={"main-tool-bar"}>
             Header
-        </div>
+        </header>
     );
 }
 

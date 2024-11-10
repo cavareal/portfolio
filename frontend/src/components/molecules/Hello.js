@@ -1,12 +1,13 @@
 import React, {useEffect, useRef} from "react";
 import gsap from "gsap";
 import './Hello.css'
+import {useGSAP} from "@gsap/react";
 
 function Hello() {
     const h1Ref = useRef();
     const triggerRef = useRef();
 
-    useEffect(() => {
+    useGSAP(() => {
         gsap.to(h1Ref.current, {
             rotation: "+=360",
             duration: 1,
@@ -19,6 +20,10 @@ function Hello() {
             }
         });
     }, []);
+
+    const { contextSafe } = useGSAP();
+
+
 
     return (
         <div>

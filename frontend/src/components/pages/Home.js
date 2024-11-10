@@ -5,6 +5,8 @@ import Hello from "../molecules/Hello.js";
 import Project from "../molecules/Project.js";
 import YourComponent from "../molecules/Project.js";
 import ScrollAnimation from "../molecules/project2.js";
+import Test2 from "../molecules/test2.js";
+import Layers from "../molecules/LayersSection.js";
 
 function Home (){
 
@@ -13,8 +15,10 @@ function Home (){
         <div>
             <Header/>
             {/*<Hello/>*/}
-            <YourComponent/>
-            <ScrollAnimation/>
+            {/*<Test2/>*/}
+            <Layers/>
+            {/*<YourComponent/>*/}
+            {/*<ScrollAnimation/>*/}
         </div>
     )
 }
