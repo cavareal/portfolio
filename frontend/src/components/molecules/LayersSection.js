@@ -5,7 +5,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useGSAP } from '@gsap/react';
 import React from 'react';
 import BigTitle from "./BigTitle.js";
-import HorizontalScroll from "./horizontalMayers.js";
+import Projects from "../organisms/Projects.js";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -20,6 +20,20 @@ export default function Layers() {
     const { contextSafe } = useGSAP(
         () => {
             const panels = gsap.utils.toArray('.panel');
+
+            // Créer un ScrollTrigger pour chaque panel essai pour gérer le défilement lors qu'on le met avec les croll horizontal
+            // panels.forEach((panel, i) => {
+            //     ScrollTrigger.create({
+            //         trigger: panel,
+            //         start: 'top center', // Déclenche au centre de l'écran
+            //         end: 'bottom top',   // Fin du trigger avant de quitter l'écran
+            //         onEnter: () => goToSection(i),
+            //         onEnterBack: () => goToSection(i),
+            //         markers: false,
+            //         scrub: 0.5, // Durée d'animation pour une transition fluide
+            //     });
+            // });
+
             panels.forEach((panel, i) => {
                 ScrollTrigger.create({
                     trigger: panel,
@@ -46,10 +60,12 @@ export default function Layers() {
     const goToSection = contextSafe((i) => {
         if (scrollTween.current) return; // Empêche d'appeler plusieurs fois
         isScrolling = true; // Début du scroll
+
         scrollTween.current = gsap.to(window, {
             scrollTo: { y: i * window.innerHeight, autoKill: true },
             duration: 1,
             id: 'scrollTween',
+            ease: "power1.out",
             onComplete: () => {
                 scrollTween.current = null;
                 isScrolling = false; // Fin du scroll
@@ -64,7 +80,7 @@ export default function Layers() {
                 <BigTitle/>
             </section>
             <section className="panel one title">Des technos...</section>
-            <section className="panel two title">... Des projets</section>
+            <section className="panel two title"> <Projects/> </section>
             <section className="panel three title">.. des </section>
             <section className="panel four title">... Des</section>
         </main>

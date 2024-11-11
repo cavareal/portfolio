@@ -1,33 +1,41 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {useGSAP} from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HorizontalScroll() {
     const containerRef = useRef();
 
-    useEffect(() => {
+    useGSAP(() => {
         const sections = gsap.utils.toArray('.section');
         const totalWidth = sections.length * window.innerWidth;
 
-        // Déplacement horizontal basé sur le scroll vertical
-        gsap.to(containerRef.current, {
+        // Animation de défilement horizontal liée au défilement vertical
+        const horizontalScroll = gsap.to(containerRef.current, {
             x: () => `-${totalWidth - window.innerWidth}px`,
             ease: 'none',
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: 'top top',
-                end: () => `+=${totalWidth}px`,
-                scrub: 1,
-                pin: true,
-            },
+        });
+
+        ScrollTrigger.create({
+            animation: horizontalScroll,
+            trigger: containerRef.current,
+            start: 'top top',
+            end: () => `+=${totalWidth}px`,
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1,
+            markers: false,
         });
 
         return () => {
-            ScrollTrigger.killAll();
+            horizontalScroll.kill();
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
-    }, []);
+    }, []
+    );
+
 
     return (
         <div className="container" ref={containerRef}>

@@ -34,8 +34,8 @@ function BigTitle() {
 
     return (
         <div>
-            <h1 ref={titleRef} className="headline">Développeur</h1>
-            <h2 className={"subBigTitle"}>Sous titre</h2>
+            <h1 ref={titleRef} className="headline">Portfolio</h1>
+            <h2 className={"subBigTitle"}>Par Cavareal</h2>
             <div className="scroll-down">
                 Scroll down
                 <div className="arrow"></div>
