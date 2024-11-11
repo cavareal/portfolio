@@ -1,5 +1,7 @@
 
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body, html {
   margin: 0;
@@ -187,31 +189,3 @@ main {
   border-radius: 8px;
 }
 
-
-/* Projects.css */
-.item_ {
-  width: 30%;
-  height: 30%;
-  display: flex;
-  justify-content: center;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 18px;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
