@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import React from 'react';
 import BigTitle from "./BigTitle.js";
 import Projects from "../organisms/Projects.js";
+import Carousel from "../organisms/Carousel.js";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -79,10 +80,12 @@ export default function Layers() {
             <section className="description panel light">
                 <BigTitle/>
             </section>
-            <section className="panel one title">Des technos...</section>
-            <section className="panel two title"> <Projects/> </section>
-            <section className="panel three title">.. des </section>
-            <section className="panel four title">... Des</section>
+            <section className="panel one">Des technos...</section>
+            <section className="panel two">
+                <Carousel/>
+            </section>
+            <section className="panel three">.. des </section>
+            <section className="panel four">... Des</section>
         </main>
     );
 }

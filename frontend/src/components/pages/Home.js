@@ -20,9 +20,9 @@ function Home (){
             <Header/>
             {/*<Hello/>*/}
             {/*<Test2/>*/}
-            {/*<Layers/>*/}
+            <Layers/>
             {/*<Projects/>*/}
-            <Carousel/>
+            {/*<Carousel/>*/}
             {/*<HorizontalScroll/>*/}
             {/*<YourComponent/>*/}
             {/*<ScrollAnimation/>*/}
