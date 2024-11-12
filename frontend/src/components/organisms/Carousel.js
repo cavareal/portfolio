@@ -50,7 +50,7 @@ const Carousel = () => {
             image: portfolio,
             type : 'laptop',
             description: "Portfolio réalisé en HTML/CSS"
-        },
+        }
     ]
     const [currentSlide, setCurrentSlide] = useState(mockItems[0].id)
 
