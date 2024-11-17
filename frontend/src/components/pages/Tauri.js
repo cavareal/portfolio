@@ -43,47 +43,67 @@ function Tauri() {
             },
         });
 
-        // Gestion du ScrollTrigger pour les titres épinglés
-        let totalOffset;
-        const allRows = rowRefs.current;
+        // Empilement des titres avec épinglage
+        rowRefs.current.forEach((row, index) => {
+            const nextRow = rowRefs.current[index + 1];
+            const endTrigger = nextRow ? nextRow : '.row-wrap';
 
-        function calculateOffsets() {
-            totalOffset = 0;
-            const offsets = allRows.map((row) => {
-                const headingHeight = gsap.utils.toArray('.titleOK').OffsetHeight;
-                const prevOffset = totalOffset;
-                totalOffset += headingHeight;
-                return prevOffset;
+            ScrollTrigger.create({
+                trigger: row,
+                start: 'top top',
+                endTrigger: endTrigger,
+                end: nextRow ? 'top top' : 'bottom bottom',
+                pin: row.querySelector('.left'),
+                pinSpacing: false,
             });
-
-            // Créer les ScrollTriggers pour chaque section
-            allRows.forEach((row, i) => {
-                const heading = row.querySelector('.left');
-                ScrollTrigger.create({
-                    trigger: heading,
-                    endTrigger: '.row-wrap',
-                    start: () => 'top ' + offsets[i],
-                    end: () => 'bottom ' + totalOffset,
-                    pin: heading,
-                    pinSpacing: false,
-                });
-            });
-        }
-
-        calculateOffsets();
-
-        // Fonction de debounce pour le recalcul lors du redimensionnement
-        const handleResize = () => {
-            calculateOffsets();
-            ScrollTrigger.refresh();
-        };
-
-        window.addEventListener('resize', handleResize);
+        });
 
         return () => {
-            window.removeEventListener('resize', handleResize);
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
+
+
+        // // Gestion du ScrollTrigger pour les titres épinglés
+        // let totalOffset;
+        // const allRows = rowRefs.current;
+        //
+        // function calculateOffsets() {
+        //     totalOffset = 0;
+        //     const offsets = allRows.map((row) => {
+        //         const headingHeight = gsap.utils.toArray('.titleOK').OffsetHeight;
+        //         const prevOffset = totalOffset;
+        //         totalOffset += headingHeight;
+        //         return prevOffset;
+        //     });
+        //
+        //     // Créer les ScrollTriggers pour chaque section
+        //     allRows.forEach((row, i) => {
+        //         const heading = row.querySelector('.left');
+        //         ScrollTrigger.create({
+        //             trigger: heading,
+        //             endTrigger: '.row-wrap',
+        //             start: () => 'top ' + offsets[i],
+        //             end: () => 'bottom ' + totalOffset,
+        //             pin: heading,
+        //             pinSpacing: false,
+        //         });
+        //     });
+        // }
+        //
+        // calculateOffsets();
+        //
+        // // Fonction de debounce pour le recalcul lors du redimensionnement
+        // const handleResize = () => {
+        //     calculateOffsets();
+        //     ScrollTrigger.refresh();
+        // };
+        //
+        // window.addEventListener('resize', handleResize);
+        //
+        // return () => {
+        //     window.removeEventListener('resize', handleResize);
+        //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        // };
     }, []);
 
     return (
