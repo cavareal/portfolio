@@ -33,6 +33,7 @@ const Carousel = () => {
             title: 'Site web de Gestion de projet',
             image: tauriLaptop,
             type : 'laptop',
+            path: '/tauri',
             description: "Java Spring, TailwindCSS, TypeScript, GitLab CI/CD",
             techno: [spring,vue, tailwind, typescript, mariadb, cicd]
         },
@@ -41,6 +42,7 @@ const Carousel = () => {
             title: 'Site e-commerce',
             image: ePlants,
             type : 'laptop',
+            path: '/',
             description: "Site en React, TailwindCSS, Express",
             techno: [react, tailwind, mariadb]
         },
@@ -49,6 +51,7 @@ const Carousel = () => {
             title: 'Application Android',
             image: cycleseo,
             type : 'phone',
+            path: '/',
             description: "App pour vélomobile en Kotlin et jetpack compose",
             techno: [kotlin, jetpack, room, cicd]
         },
@@ -57,6 +60,7 @@ const Carousel = () => {
             title: 'Jeu Falling Blox',
             image: fallingBlox,
             type : 'laptop',
+            path: '/',
             description: "Jeu Falling Blox en Java et JavaSwing",
             techno : [java, javaSwing]
         },
@@ -65,6 +69,7 @@ const Carousel = () => {
             title: 'Jeu Les Aventuriers du Rail',
             image: aventuriersDuRail,
             type : 'laptop',
+            path: '/',
             description: "Jeu Les Aventuriers du Rail en Java et JavaSwing",
             techno: [java, javaSwing]
         },
@@ -73,6 +78,7 @@ const Carousel = () => {
             title: 'Portfolio',
             image: portfolio,
             type : 'laptop',
+            path: '/',
             description: "Portfolio réalisé en HTML/CSS",
             techno: [html, css]
         },
@@ -81,6 +87,7 @@ const Carousel = () => {
             title: 'Résumé de texte automatique',
             image: sum,
             type : 'laptop',
+            path: '/',
             description: "Résumé de texte automatique en python",
             techno: [python, jupyter, spacy]
         }
@@ -101,59 +108,66 @@ const Carousel = () => {
             return {
                 ...item,
                 renderItem: (
-                    <div
-                        className={`grid aspect-[1.1] rounded w-full place-items-center text-white transition-all duration-700 ${currentSlide === item.id
-                            ? 'z-10 scale-150 bg-yellow-600'
-                            : 'bg-violet-500'
-                        }`}>
-                        {<div className="subSubTitle mt-1">{item.title}</div>}
-                        {<img
-                            src={item.image}
-                            alt={item.title}
-                            className={`w-auto h-3/4 ${item.type === 'laptop' ? 'w-auto h-5/6' : 'w-auto h-auto'}`}
-                        />}
-                        {/*{<div className="text-sm p">{item.description}</div>}*/}
-                        <div className="flex flex-row justify-center gap-1 bg-gray-200 bg-opacity-20 rounded mb-3 p-1">
-                            {item.techno.map((techno) => {
-                                return <img src={techno} alt="techno" className="w-auto h-10"/>
-                            })}
+                        <div
+                            className={`grid aspect-[1.1] rounded w-full place-items-center text-white transition-all duration-700 px-4 ${currentSlide === item.id
+                                ? 'z-10 scale-150 bg-yellow-600'
+                                : 'bg-violet-500'
+                            }`}>
+                            {<div className="subSubTitle mt-1">{item.title}</div>}
+                            <a href={item.path}>
+                                {<img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className={` ${item.type === 'laptop' ? 'w-auto h-5/6' : 'w-auto h-auto'}`}
+                                />}
+                            </a>
+                                {/*{<div className="text-sm p">{item.description}</div>}*/}
+                                <div
+                                    className="flex flex-row justify-center gap-1 bg-gray-200 bg-opacity-20 rounded mb-3 p-1">
+                                    {item.techno.map((techno) => {
+                                        return <img src={techno} alt="techno" className="w-auto h-10"/>
+                                    })}
+                                </div>
                         </div>
-                    </div>
                 )
             }
         })
     })
 
     useListenToCustomEvent((event) => {
-        if (event.eventName === 'onSlideStartChange') {
-            setCurrentSlide(event?.nextItem?.id)
-        }
-    })
+    if (event.eventName === 'onSlideStartChange') {
+    setCurrentSlide(event?.nextItem?.id)
+}
+})
 
     return (
-        <div className="">
-            <div className={"text-4xl text-center mb-1 subTitle"}>Projets</div>
-            <div className="py-10 relative justify-center">
-                <button onClick={slideToPrevItem}
-                        className="absolute top-1/2 -translate-y-1/2 -translate-x-full left-[17%]">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
-                         stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
-                    </svg>
-                </button>
-                <div className="mx-auto w-[65%] overflow-x-clip py-[4%] relative">
-                    {carouselFragment}
-                </div>
-                <button onClick={slideToNextItem}
-                        className="absolute top-1/2 -translate-y-1/2 translate-x-full right-[17%]">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
-                         stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
-                    </svg>
-                </button>
+    <div className="">
+        <div className={"text-4xl text-center mb-1 subTitle"}>Projets</div>
+        <div className="py-10 relative justify-center">
+            <button onClick={slideToPrevItem}
+                    className="absolute top-1/2 -translate-y-1/2 -translate-x-full left-[29%]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                     strokeWidth="1.5"
+                     stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round"
+                          d="M15.75 19.5L8.25 12l7.5-7.5"/>
+                </svg>
+            </button>
+            <div className="mx-auto w-[40%] overflow-x-clip py-[4%] relative">
+                {carouselFragment}
             </div>
+            <button onClick={slideToNextItem}
+                    className="absolute top-1/2 -translate-y-1/2 translate-x-full right-[29%]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                     strokeWidth="1.5"
+                     stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round"
+                          d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                </svg>
+            </button>
         </div>
+    </div>
     )
-}
+    }
 
-export default Carousel
+    export default Carousel
