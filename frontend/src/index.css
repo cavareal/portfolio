@@ -233,3 +233,44 @@ main {
   font-style: normal;
   /*text-transform: uppercase;*/
 }
+
+
+/*ABOUT*/
+
+#svg-stage {
+  max-width: 600px;
+  overflow: visible;
+  margin-top: 60vh;
+}
+
+.ball {
+  fill: white;
+  visibility: hidden;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+text {
+  fill: white;
+  font-size: 10px;
+  visibility: hidden;
+}
+
+.area{
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+  font-size : 0.75rem;
+  font-style: normal;
+  fill: white;
+  visibility: hidden;
+}
+
+/*.theLine {*/
+/*  stroke-dasharray: 0 100%;*/
+/*}*/
