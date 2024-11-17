@@ -6,6 +6,23 @@ import cycleseo from '/public/cycleseo.png'
 import fallingBlox from '/public/fallingBlox.png'
 import aventuriersDuRail from '/public/aventuriersDuRail.png'
 import portfolio from '/public/premierPortfolioPhoto.png'
+import sum from '/public/text-summerization.png'
+import spring from '/public/spring-logo.png'
+import tailwind from '/public/tailwind-logo.png'
+import cicd from '/public/ci-cd-logo.png'
+import typescript from '/public/Typescript-icon.png'
+import react from '/public/React-icon.png'
+import kotlin from '/public/kotlin-logo.png'
+import jetpack from '/public/jetpack-compose-logo.png'
+import java from '/public/java-icon.png'
+import javaSwing from '/public/java-swing.png'
+import html from '/public/html-icon.png'
+import css  from '/public/css-icon.png'
+import mariadb from '/public/mariadb-logo.png'
+import vue from '/public/Vue-logo.png'
+import python from '/public/python-logo.png'
+import spacy from '/public/SpaCy-logo.png'
+
 
 const Carousel = () => {
     const mockItems = [
@@ -14,42 +31,56 @@ const Carousel = () => {
             title: 'Site web de Gestion de projet',
             image: tauriLaptop,
             type : 'laptop',
-            description: "Java Spring, TailwindCSS, TypeScript, GitLab CI/CD"
+            description: "Java Spring, TailwindCSS, TypeScript, GitLab CI/CD",
+            techno: [spring,vue, tailwind, typescript, mariadb, cicd]
         },
         {
             id: 'item-2',
             title: 'Site e-commerce',
             image: ePlants,
             type : 'laptop',
-            description: "Site en React, TailwindCSS, Express"
+            description: "Site en React, TailwindCSS, Express",
+            techno: [react, tailwind, mariadb]
         },
         {
             id: 'item-3',
             title: 'Application Android',
             image: cycleseo,
             type : 'phone',
-            description: "App pour vélomobile en Kotlin et jetpack compose"
+            description: "App pour vélomobile en Kotlin et jetpack compose",
+            techno: [kotlin, jetpack, cicd]
         },
         {
             id: 'item-4',
             title: 'Jeu Falling Blox',
             image: fallingBlox,
             type : 'laptop',
-            description: "Jeu Falling Blox en Java et JavaSwing"
+            description: "Jeu Falling Blox en Java et JavaSwing",
+            techno : [java, javaSwing]
         },
         {
             id: 'item-5',
             title: 'Jeu Les Aventuriers du Rail',
             image: aventuriersDuRail,
             type : 'laptop',
-            description: "Jeu Les Aventuriers du Rail en Java et JavaSwing"
+            description: "Jeu Les Aventuriers du Rail en Java et JavaSwing",
+            techno: [java, javaSwing]
         },
         {
             id: 'item-6',
             title: 'Portfolio',
             image: portfolio,
             type : 'laptop',
-            description: "Portfolio réalisé en HTML/CSS"
+            description: "Portfolio réalisé en HTML/CSS",
+            techno: [html, css]
+        },
+        {
+            id: 'item-7',
+            title: 'Résumé de texte automatique',
+            image: sum,
+            type : 'laptop',
+            description: "Résumé de texte automatique en python",
+            techno: [python, spacy]
         }
     ]
     const [currentSlide, setCurrentSlide] = useState(mockItems[0].id)
@@ -69,17 +100,22 @@ const Carousel = () => {
                 ...item,
                 renderItem: (
                     <div
-                        className={`grid aspect-[1.1] w-full place-items-center text-white transition-all duration-700 ${currentSlide === item.id
+                        className={`grid aspect-[1.1] rounded w-full place-items-center text-white transition-all duration-700 ${currentSlide === item.id
                             ? 'z-10 scale-150 bg-yellow-600'
                             : 'bg-violet-500'
                         }`}>
-                        {<div className="subSubTitle">{item.title}</div>}
+                        {<div className="subSubTitle mt-1">{item.title}</div>}
                         {<img
                             src={item.image}
                             alt={item.title}
                             className={`w-auto h-3/4 ${item.type === 'laptop' ? 'w-auto h-5/6' : 'w-auto h-auto'}`}
                         />}
-                        {<div className="text-sm p">{item.description}</div>}
+                        {/*{<div className="text-sm p">{item.description}</div>}*/}
+                        <div className="flex flex-row justify-center gap-1 bg-gray-200 bg-opacity-20 rounded mb-3 p-1">
+                            {item.techno.map((techno) => {
+                                return <img src={techno} alt="techno" className="w-auto h-10"/>
+                            })}
+                        </div>
                     </div>
                 )
             }
