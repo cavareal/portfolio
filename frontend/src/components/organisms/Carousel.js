@@ -22,6 +22,8 @@ import mariadb from '/public/mariadb-logo.png'
 import vue from '/public/Vue-logo.png'
 import python from '/public/python-logo.png'
 import spacy from '/public/SpaCy-logo.png'
+import jupyter from '/public/jupyter-logo.png'
+import room from '/public/room-logo.png'
 
 
 const Carousel = () => {
@@ -48,7 +50,7 @@ const Carousel = () => {
             image: cycleseo,
             type : 'phone',
             description: "App pour vélomobile en Kotlin et jetpack compose",
-            techno: [kotlin, jetpack, cicd]
+            techno: [kotlin, jetpack, room, cicd]
         },
         {
             id: 'item-4',
@@ -80,7 +82,7 @@ const Carousel = () => {
             image: sum,
             type : 'laptop',
             description: "Résumé de texte automatique en python",
-            techno: [python, spacy]
+            techno: [python, jupyter, spacy]
         }
     ]
     const [currentSlide, setCurrentSlide] = useState(mockItems[0].id)
