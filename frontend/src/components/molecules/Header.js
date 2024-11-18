@@ -44,7 +44,7 @@ function Header() {
                                 </a>
                             </ListItem>
                             <ListItem>
-                                <a href="#navigation-menu">
+                                <a href="/photography">
                                     <ListItemButton
                                         className="nav-item-button"
                                     >

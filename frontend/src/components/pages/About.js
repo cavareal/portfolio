@@ -59,6 +59,7 @@ function About() {
     return (
         <div ref={mainRef} className={"bg-gray-800"}>
             <Header />
+            <section className={"h-full"}></section>
             <div className="flex ml-10">
                 <svg id="svg-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200"
                      style={{width: '100%', height: 'auto'}}>
