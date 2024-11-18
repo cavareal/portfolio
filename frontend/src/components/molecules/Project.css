@@ -1,11 +1,11 @@
 :root {
-    --text-color: #111;
+    /*--text-color: #111;*/
     --bg-color: #b9b3a9;
 }
 
 body {
     font-family: termina, sans-serif;
-    color: var(--text-color);
+    /*color: var(--text-color);*/
     background: var(--bg-color);
     transition: 0.3s ease-out;
     overflow-x: hidden;
@@ -75,7 +75,7 @@ h2 {
     display: flex;
     left: 0;
     background: var(--text-color);
-    color: var(--bg-color);
+    /*color: var(--bg-color);*/
 }
 
 .pin-wrap {

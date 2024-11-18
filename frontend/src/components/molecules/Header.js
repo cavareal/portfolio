@@ -34,7 +34,7 @@ function Header() {
                             <ListItem>
                                 <a href="/">
                                     <ListItemButton
-                                        className="nav-item-button"
+                                        className="nav-item-button text-white"
                                     >
                                         <ListItemDecorator className="nav-item-icon">
                                             <HomeRounded/>

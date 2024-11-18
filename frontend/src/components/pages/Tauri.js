@@ -143,7 +143,6 @@ function Tauri() {
             </div>
 
             {/* Section 3 */}
-            <div style={{backgroundColor: 'green', height: '100vh'}}></div>
             <div className="row-wrap">
                 {[1, 2, 3].map((pin, index) => (
                     <div key={pin} className="row" ref={(el) => (rowRefs.current[index] = el)}>
