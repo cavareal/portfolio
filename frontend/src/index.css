@@ -74,8 +74,7 @@ main {
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #918888;
-  opacity: 0.8;
+  background-color: rgba(145, 136, 136, 0.8);
   padding: 0.5% 0;
   border-radius: 20px;
   margin-top: 1%;
@@ -290,41 +289,19 @@ text {
   /*overflow-y: scroll; !* Permet le défilement vertical *!*/
 }
 
-/*.panelOK-container {*/
-/*  height: 100%;  !* S'assure que la hauteur de l'écran est utilisée *!*/
-/*  overflow: auto;  !* Permet le défilement de la page *!*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*}*/
-
 /*!* Le panneau avec le titre sticky *!*/
 .panelOK {
-  /*position: relative;*/
   min-height: 400px;
   background-color: #d2d2d2;
-  /*padding: 20px;*/
-  /*margin-bottom: 20px;*/
-  /*box-sizing: border-box;*/
 }
 
-/*!* Le titre sticky *!*/
-/*.panelOK-sticky {*/
-/*  background-color: #66ccff;*/
-/*  color: white;*/
-/*  position: sticky;*/
-/*  top: 0;*/
-/*  z-index: 10;  !* S'assure que le titre reste au-dessus des autres éléments *!*/
-/*  border-top: 5px solid #0099cc;*/
-/*  padding: 10px;*/
-/*  font-size: 24px;*/
-/*  font-weight: bold;*/
-/*  box-sizing: border-box;*/
-/*}*/
 
-.row{ display: flex; flex-wrap: wrap; padding: 15px 0; }
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
 .row .left{ width: 40%; }
 .row .right{ width: 60%; }
-.row + .row{ margin-top: 50px; }
 .pin-spacer {
   /* to get around an odd browser rounding issue that happens when it gets converted to pixels */
   width: 40% !important;
@@ -438,4 +415,11 @@ img:nth-child(7) {
 
 img:nth-child(8) {
   grid-area: 26/5/30/15;
+}
+
+.titleOK {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #1B1336
 }
