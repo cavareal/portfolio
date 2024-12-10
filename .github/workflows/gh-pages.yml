@@ -24,8 +24,8 @@ jobs:
         run: |
           pnpm build
 
-      - name: GitHub Pages action
-        uses: cavareal/peaceiris-actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend/build  # Ajustez ceci si nécessaire
+      - name: Deploy to GitHub Pages
+        run: |
+          pnpm run deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
