@@ -42,7 +42,7 @@ jobs:
           cd frontend
           pnpm run deploy
         env:
-          GH_TOKEN: ${{ secrets.TOKEN_ENV }}
+          # GH_TOKEN: ${{ secrets.TOKEN_ENV }}
           name: pages
           url: https://cavareal.github.io/portfolio
         
