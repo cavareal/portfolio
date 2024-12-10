@@ -27,13 +27,13 @@ jobs:
 
       - name: Build project
         run: |
-          cd portfolio/frontend
+          cd frontend
           pnpm install
           pnpm build
 
       - name: Deploy to GitHub Pages
         run: |
-          cd portfolio/frontend
+          cd frontend
           pnpm run deploy
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
