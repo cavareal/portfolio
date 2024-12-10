@@ -24,8 +24,9 @@ jobs:
         run: |
           pnpm build
 
-      - name: Deploy to GitHub Pages
-        uses: cavareal/peaceiris-actions-gh-pages@v3
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v4.0.0
+
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/build  # Ajustez ceci si nécessaire
