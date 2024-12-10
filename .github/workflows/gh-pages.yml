@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18  # Utilise une version compatible de Node.js
-          cache: 'pnpm'     # Active le cache PNPM pour accélérer les builds futurs
 
       - name: Install pnpm
         run: |
