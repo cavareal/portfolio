@@ -26,10 +26,12 @@ jobs:
           corepack prepare pnpm@latest --activate
 
       - name: Build project
+        working-directory: ./frontend
         run: |
           pnpm build
 
       - name: Deploy to GitHub Pages
+        working-directory: ./frontend
         run: |
           pnpm run deploy
         env:
