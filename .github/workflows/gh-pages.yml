@@ -26,13 +26,14 @@ jobs:
           corepack prepare pnpm@latest --activate
 
       - name: Build project
-        working-directory: ./frontend
         run: |
+          cd portfolio/frontend
+          pnpm install
           pnpm build
 
       - name: Deploy to GitHub Pages
-        working-directory: ./frontend
         run: |
+          cd portfolio/frontend
           pnpm run deploy
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
