@@ -33,7 +33,7 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.email "al.cavaree@gmail.com"
+          git config --global user.email "alicecavaree7@gmail.com"
           git config --global user.name "cavareal"
 
       - name: Deploy to GitHub Pages
