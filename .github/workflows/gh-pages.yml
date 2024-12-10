@@ -10,15 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # Étape 1 : Récupération du code
+      - name: Checkout code
         uses: actions/checkout@v3
 
+      # Étape 2 : Configuration de Node.js et installation de PNPM
       - name: Setup Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Utilise une version compatible de Node.js
+          cache: 'pnpm'     # Active le cache PNPM pour accélérer les builds futurs
 
-      - name: Install dependencies
+      - name: Install pnpm
         run: |
-          pnpm install
+          corepack enable
+          corepack prepare pnpm@latest --activate
 
       - name: Build project
         run: |
