@@ -43,3 +43,6 @@ jobs:
           pnpm run deploy
         env:
           GH_TOKEN: ${{ secrets.TOKEN_ENV }}
+          name: pages
+          url: https://cavareal.github.io/portfolio
+        
