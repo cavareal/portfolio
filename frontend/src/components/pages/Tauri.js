@@ -95,43 +95,27 @@ function Tauri() {
                         <div className={"titleOK"}>Introduction</div>
                     </div>
                     <div className="right">
-                        <div className="right">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                            unknown
-                            printer took a galley of type and scrambled it to make a type specimen book. It has
-                            survived not
-                            only five centuries, but also the leap into electronic typesetting, remaining
-                            essentially
-                            unchanged. It was popularised in the 1960s with the release of Letraset sheets
-                            containing Lorem
-                            Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                            including versions of Lorem Ipsum.
+                        <p className="">
+                            Le projet Génie Logiciel Système management est une solution web conçue pour optimiser la
+                            gestion du projet Génie Logiciel,
+                            une activité majeure de l'option Logiciel et Données (LD) à l'ESEO.<br/><br/>
 
-                            Why do we use it?
-                            It is a long established fact that a reader will be distracted by the readable content
-                            of a page
-                            when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                            normal
-                            distribution of letters, as opposed to using 'Content here, content here', making it
-                            look like
-                            readable English. Many desktop publishing packages and web page editors now use Lorem
-                            Ipsum as
-                            their default model text, and a search for 'lorem ipsum' will uncover many web sites
-                            still in
-                            their infancy. Various versions have evolved over the years, sometimes by accident,
-                            sometimes on
-                            purpose (injected humour and the like).
-                        </div>
+                            La gestion actuelle repose sur des processus manuels et des outils déconnectés comme des
+                            feuilles de calcul. Cela engendre :<br/><br/>
+
+                            Un temps de préparation considérable pour créer des équipes équilibrées. <br/>
+                            Une complexité accrue pour gérer les évaluations et les changements d'équipe.<br/>
+                            Un manque d'automatisation dans la collecte et l’analyse des données.<br/>
+                        </p>
                     </div>
                 </div>
-                <div className={"row mb-16"} ref={(el) => (rowRefs.current[3] = el)}></div>
+                <div className={"row mb-20"} ref={(el) => (rowRefs.current[3] = el)}></div>
                 <div className="row" ref={(el) => (rowRefs.current[4] = el)}>
                     <div className="left">
                         <div className={"titleOK"}>Méthode Agile</div>
                     </div>
                     <div className="right">
-                        <div className="right">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        <div className="">Lorem Ipsum is simply dummy text of the printing and typesetting
                             industry.
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
                             unknown
@@ -161,13 +145,13 @@ function Tauri() {
                         </div>
                     </div>
                 </div>
-                <div className={"row mb-16"} ref={(el) => (rowRefs.current[5] = el)}></div>
+                <div className={"row mb-20"} ref={(el) => (rowRefs.current[5] = el)}></div>
                 <div className="row" ref={(el) => (rowRefs.current[6] = el)}>
                     <div className="left">
                         <div className={"titleOK"}>Architecture</div>
                     </div>
                     <div className="right">
-                        <div className="right">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        <div className="">Lorem Ipsum is simply dummy text of the printing and typesetting
                             industry.
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
                             unknown
@@ -197,7 +181,7 @@ function Tauri() {
                         </div>
                     </div>
                 </div>
-                <div className="row mb-16" ref={(el) => (rowRefs.current[7] = el)}></div>
+                <div className="row mb-20" ref={(el) => (rowRefs.current[7] = el)}></div>
                 {/*nécéssaire pour arreter le titre*/}
             </div>
             <div style={{backgroundColor: 'grey', height: '100vh'}}></div>

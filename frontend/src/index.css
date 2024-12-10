@@ -295,13 +295,22 @@ text {
   background-color: #d2d2d2;
 }
 
+.titleOK {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+  color: #1B1336
+}
+
 
 .row{
   display: flex;
   flex-wrap: wrap;
+  padding-right: 2rem;
 }
 .row .left{ width: 40%; }
-.row .right{ width: 60%; }
+.row .right{ width: 60%;}
 .pin-spacer {
   /* to get around an odd browser rounding issue that happens when it gets converted to pixels */
   width: 40% !important;
@@ -417,9 +426,3 @@ img:nth-child(8) {
   grid-area: 26/5/30/15;
 }
 
-.titleOK {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: #1B1336
-}
