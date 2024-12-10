@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Récupération du code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Étape 2 : Configuration de Node.js et installation de PNPM
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Utilise une version compatible de Node.js
+
+      - name: Install pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+
+      - name: Build project
+        run: |
+          cd frontend
+          pnpm install
+          pnpm build
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "alicecavaree7@gmail.com"
+          git config --global user.name "cavareal"
+          git config --global url."https://${{ secrets.GH_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
+      - name: Deploy to GitHub Pages
+        run: |
+          cd frontend
+          pnpm run deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
