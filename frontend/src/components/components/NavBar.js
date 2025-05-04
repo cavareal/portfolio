@@ -115,7 +115,7 @@ const AboutMenu = React.forwardRef(({ focusNext, focusPrevious, ...props }, ref)
                     {...props}
                     role="menuitem"
                     onKeyDown={(event) => {
-                        props.onKeyDown?.(event);
+                        // props.onKeyDown?.(event);
                         if (event.key.match(/(ArrowLeft|ArrowRight|Tab)/)) {
                             setAnchorEl(null);
                         }
@@ -127,7 +127,7 @@ const AboutMenu = React.forwardRef(({ focusNext, focusPrevious, ...props }, ref)
                     }}
                     onFocus={(event) => setAnchorEl(event.currentTarget)}
                     onMouseEnter={(event) => {
-                        props.onMouseEnter?.(event);
+                        // props.onMouseEnter?.(event);
                         setAnchorEl(event.currentTarget);
                     }}
                     sx={[open && ((theme) => theme.variants.plainHover.neutral)]}
@@ -221,7 +221,7 @@ const AdmissionsMenu = React.forwardRef(
                         {...props}
                         role="menuitem"
                         onKeyDown={(event) => {
-                            props.onKeyDown?.(event);
+                            // props.onKeyDown?.(event);
                             if (event.key.match(/(ArrowLeft|ArrowRight|Tab)/)) {
                                 setAnchorEl(null);
                             }
@@ -233,7 +233,7 @@ const AdmissionsMenu = React.forwardRef(
                         }}
                         onFocus={(event) => setAnchorEl(event.currentTarget)}
                         onMouseEnter={(event) => {
-                            props.onMouseEnter?.(event);
+                            // props.onMouseEnter?.(event);
                             setAnchorEl(event.currentTarget);
                         }}
                         sx={[open && ((theme) => theme.variants.plainHover.neutral)]}

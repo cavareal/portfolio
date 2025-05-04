@@ -24,7 +24,10 @@ import python from '/public/python-logo.png'
 import spacy from '/public/SpaCy-logo.png'
 import jupyter from '/public/jupyter-logo.png'
 import room from '/public/room-logo.png'
-
+import dart from '/src/assets/logo/dart-logo.png'
+import flutter from '/src/assets/logo/flutter-icon.png'
+import cubit from '/src/assets/logo/flutter_cubit.png'
+import actions from '/src/assets/logo/githubActions.svg'
 
 const Carousel = () => {
     const mockItems = [
@@ -54,6 +57,15 @@ const Carousel = () => {
             path: '/',
             description: "App pour vélomobile en Kotlin et jetpack compose",
             techno: [kotlin, jetpack, room, cicd]
+        },
+        {
+            id: 'item-8',
+            title: 'Application mobile Flutter',
+            image: cycleseo,
+            type : 'phone',
+            path: '/',
+            description: "App pour vélomobile en Kotlin et jetpack compose",
+            techno: [flutter, dart, cubit, actions]
         },
         {
             id: 'item-4',
@@ -153,7 +165,7 @@ const Carousel = () => {
                           d="M15.75 19.5L8.25 12l7.5-7.5"/>
                 </svg>
             </button>
-            <div className="mx-auto w-[40%] overflow-x-clip py-[4%] relative">
+            <div className="mx-auto w-[34%] overflow-x-clip py-[4%] relative"> {/*changer le w-[x] pour ajuster la taille des cards*/}
                 {carouselFragment}
             </div>
             <button onClick={slideToNextItem}
