@@ -351,6 +351,16 @@ export default function NavigationMenu() {
                         />
                     </ListItem>
                     <ListItem role="none">
+                        <ListItemButton
+                            role="menuitem"
+                            {...getTargetProps(3)}
+                            component="a"
+                            href="/home2"
+                        >
+                            Home 2
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem role="none">
                         <AdmissionsMenu
                             onMouseEnter={() => {
                                 setActiveIndex(2);

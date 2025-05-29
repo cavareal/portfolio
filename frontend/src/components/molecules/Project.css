@@ -32,26 +32,26 @@ img {
     object-fit: cover;
 }
 
-h1 {
-    font-size: 5rem;
-    line-height: 1;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    position: absolute;
-    top: 10vw;
-    left: 10vw;
-    z-index: 4;
-    overflow-wrap: break-word;
-    hyphens: auto;
+/*h1 {*/
+/*    font-size: 5rem;*/
+/*    line-height: 1;*/
+/*    font-weight: 800;*/
+/*    margin-bottom: 1rem;*/
+/*    position: absolute;*/
+/*    top: 10vw;*/
+/*    left: 10vw;*/
+/*    z-index: 4;*/
+/*    overflow-wrap: break-word;*/
+/*    hyphens: auto;*/
 
-    @media (max-width: 768px) {
-        font-size: 16vw;
-    }
+/*    @media (max-width: 768px) {*/
+/*        font-size: 16vw;*/
+/*    }*/
 
-    span {
-        display: block;
-    }
-}
+/*    span {*/
+/*        display: block;*/
+/*    }*/
+/*}*/
 
 h2 {
     font-size: 2rem;

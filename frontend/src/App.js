@@ -5,6 +5,7 @@ import Home from "./components/pages/Home.js";
 import About from "./components/pages/About.js";
 import Tauri from "./components/pages/Tauri.js";
 import Photography from "./components/pages/Photography.js";
+import Home2 from "./components/pages/Home2.js";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/about" element={<About/>} />
                 <Route path="/tauri" element={<Tauri/>} />
                 <Route path={"/photography"} element={<Photography/>}/>
+                <Route path={"/home2"} element={<Home2/>}/>
             </Routes>
         </Router>
     )

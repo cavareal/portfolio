@@ -61,6 +61,15 @@ function Header() {
                                     </ListItemButton>
                                 </a>
                             </ListItem>
+                            <ListItem>
+                                <a href="/home2">
+                                    <ListItemButton
+                                        className="nav-item-button"
+                                    >
+                                        home test
+                                    </ListItemButton>
+                                </a>
+                            </ListItem>
                         </List>
                     </div>
                 </Box>
