@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Lottie from "lottie-react";
 import rocketAnimation from '/public/rocket_animation.json';
 import planet from '/public/planete_01.png';
+import red_planet from '/src/assets/illustrations/red_planet.png';
 
 function Home2 (){
 
@@ -42,7 +43,7 @@ function Home2 (){
             {/*        </p>*/}
             {/*    </div>*/}
             {/*</div>*/}
-            <div className="h-screen w-screen bg-black text-white">
+            <div className="h-screen w-screen bg-bg-milkyway">
                 <Head/>
                 <AnimatePresence>
                     {loading ? null : (
@@ -78,23 +79,21 @@ function Home2 (){
                                 animate={{opacity: 1}}
                                 transition={{duration: 0.8, delay: 1}}
                             >
-                                {/*<h1 className="text-3xl font-bold">Bienvenue dans l'espace 🚀</h1>*/}
-                                {/*<img src={planet} alt="planète" className="w-[70rem] h-[70rem]"/>*/}
-                                {/*<div className="absolute w-full h-full pointer-events-none">*/}
-                                {/*    <div*/}
-                                {/*        className="absolute bottom-[-50%] left-1/2 origin-[center_200vh] animate-[spin_20s_linear_infinite]">*/}
-                                {/*        <img src={planet} alt="planète" className="w-[70rem] h-[70rem]"/>*/}
-                                {/*    </div>*/}
-                                {/*</div>*/}
-                                {/*<div className="absolute left-1/2 top-1/2 w-0 h-0 transform -translate-x-1/2">*/}
-                                {/*    <div className="relative origin-[center_200vh] animate-[spin_20s_linear_infinite]">*/}
-                                {/*        <img*/}
-                                {/*            src={planet}*/}
-                                {/*            alt="planète"*/}
-                                {/*            className="w-[70rem] h-[70rem]"*/}
-                                {/*        />*/}
-                                {/*    </div>*/}
-                                {/*    </div>*/}
+                                <div className="absolute inset-0 pointer-events-none">
+                                    <div className="absolute w-full h-[30rem] top-0 overflow-hidden font-milkyway text-[20rem]">
+                                        <div style={{
+                                            WebkitTextStroke: '2px white',
+                                            color: 'transparent',
+                                                }}
+                                            className=" relative inline-block whitespace-nowrap ">
+                                            <span className="inline-block animate-defilement"> &#32; Bienvenue Dans l&#39;Espace ! </span>
+                                            <span className="inline-block animate-defilement2 absolute left-0 top-0"> &#32; Bienvenue Dans l&#39;Espace! </span>
+                                        </div>
+                                        {/*<h1 className="font-milkyway text-black whitespace-nowrap text-[20rem] animate-scroll-left [text-shadow:_0_0_4px_white,_0_0_4px_white]">*/}
+                                        {/*    Bienvenue Dans l Espace*/}
+                                        {/*</h1>*/}
+                                    </div>
+                                </div>
 
                                 <div className="min-h-screen flex items-end justify-center -mb-[100rem]">
                                     <img
@@ -106,16 +105,15 @@ function Home2 (){
                                             animationTimingFunction: 'linear',
                                             animationIterationCount: 'infinite'
                                         }}
-                                    />
-                                </div>
-
+                                        />
+                                    </div>
                             </motion.div>
-                        )}
+                            )}
                     </AnimatePresence>
                 </div>
             </div>
         </div>
-    )
+)
 }
 
 export default Home2;
